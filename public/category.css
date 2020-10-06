@@ -1,0 +1,117 @@
+body{
+	background-color: rgb(221, 219, 219);
+}
+
+.header{
+	height:60px;
+	padding:10px;
+	background-color:rgb(101, 196, 137);
+	position: sticky;
+
+}
+#logo{
+	margin:0px 10px;
+	margin-right: 40px; 
+}
+#search{
+	width:500px;
+	outline:none;
+	height: 40px;
+	border:none;
+	margin-right: 20px;
+	margin-left: 70px;
+}
+.navctn{
+	width: 100px;
+	margin-left: 50px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 25px;
+  font-weight: bolder;
+  color: rgb(101, 196, 137);
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 25px;
+  font-weight: bolder;
+  color: rgb(101, 196, 137);
+}
+.topadvert{
+	height:170px;
+}
+.downadvert{
+	height: 170px;
+}
+.dis{
+	position: absolute;
+	top: 0px;
+	left: 4px;
+}
+.prd{
+	margin-bottom: 3px;
+}
+.prd:hover{
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.prdd{
+	width:100%;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.prdp{
+	font-weight: bolder;
+}
+.prddis{
+	font-size: 12px;
+}
+.ul{
+	list-style-type: none;
+	margin-top: 10px;
+	padding: 0px;
+}
+
+.catitem{
+	font-size: 14px;
+	margin-bottom:2px ;
+	padding: 5px;
+}
+.catitem:hover{
+	background-color: rgb(101, 196, 137);
+	margin-bottom:2px ;
+	color:white;
+}
+#cart{
+ font-size:20px;
+ margin-left: 40px;
+}
+#cartnum{
+	position: relative;
+	left:-8px;
+	font-size: 13px;
+	bottom: 10px;
+	
+}
+.side{
+    display: inline-block;
+    width:200px;
+}
+.main{
+    display: inline-block;
+    width: 800px;
+    margin:auto;
+}

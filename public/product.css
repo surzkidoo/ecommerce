@@ -1,0 +1,50 @@
+body{
+	background-color: rgb(221, 219, 219);
+}
+
+.header{
+	height:60px;
+	padding:10px;
+	background-color:rgb(101, 196, 137);
+	position: sticky;
+
+}
+#logo{
+	margin:0px 10px;
+	margin-right: 40px; 
+}
+#search{
+	width:500px;
+	outline:none;
+	height: 40px;
+	border:none;
+	margin-right: 20px;
+	margin-left: 70px;
+}
+.shrtv{
+	margin-right: 2px;
+}
+.shrtv:hover{
+	outline: 1px solid;
+	
+}
+.prdpp{
+	font-weight: bolder;
+	font-size:30px;
+}
+.disp{
+	padding: 2px;
+}
+.fa-facebook,.fa-whatsapp,.fa-twitter{
+	font-size:20px !important;
+	border:2px solid black;
+	border-radius: 10px;
+	padding: 8px;
+}
+.fa-facebook:hover,.fa-whatsapp:hover,.fa-twitter:hover{
+	font-size:20px !important;
+	border:2px solid rgb(101, 196, 137);
+	border-radius: 10px;
+	padding: 8px;
+	color: rgb(101, 196, 137);
+}

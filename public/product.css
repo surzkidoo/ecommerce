@@ -1,5 +1,7 @@
 body{
 	background-color: rgb(221, 219, 219);
+	border: 0px;
+	padding: 0px;
 }
 
 .header{
@@ -8,6 +10,41 @@ body{
 	background-color:rgb(101, 196, 137);
 	position: sticky;
 
+}
+.model{
+	position: absolute;
+	top:100px;
+	left: 30%;
+	z-index: 4;
+	
+}
+.spinner{
+	border:5px  solid white;
+	border-top:5px  solid rgb(25, 221, 25);
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+.blur{
+	top:0px;
+	background-color: rgba(0, 0,0,0.5);
+	height:100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+
+}
+@keyframes spin{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
 }
 #logo{
 	margin:0px 10px;

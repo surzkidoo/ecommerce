@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>No 1 shopping site in nigeria</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://localhost:3000/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/product.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/index.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://localhost:3000/jquery.js"></script>
+
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="blur mt-0"><span class=" float-right d-block bg-success p-3 spinner mr-1"></span> LOADING...</div>
+          
+    <div class="msg">
+        
+    </div>
+    <div class="container   bg-white mt-5 p-5">
+        <div class="row ">
+            <div class="col-md-4 col-sm-12  mx-auto">
+
+                <div class="mb-2 mx-auto">
+                    <% 
+                        var Prd= Data.product[0];
+                    %>
+                    <img id="prodimg" src="http://localhost:3000/<%= Prd.product_img %>" class="rounded-lg mx-auto img-fluid "
+                        width="250px" alt="">
+                </div>
+                <% Data.product.slideimage.forEach(function(slide){  %>
+                <img src="http://localhost:3000/<%=slide.slide_img%>" class="shrtv mb-1  showcase" width="40px" alt="">
+
+                <% });%>
+            </div>
+            <div class="col-md-8 pl-4">
+                <h4><%=Prd.product_name%></h4>
+                <p> <span class="text-secondary ">Brand: </span><%=Prd.product_brand%></p>
+                <p> <span class="text-secondary ">ID: </span><%=Prd.product_id%></p>
+                <hr class="m-0">
+                <p class="prdpp m-0">&#8358;<%=Prd.product_price.toLocaleString();%></p>
+                <% if(Prd.product_desc) {%>
+                <span class="text-secondary m-0"><del>&#8358; <%=Prd.product_desc.toLocaleString();%></del></span>
+                <span class="ml-2 disp rounded-right bg-danger "><small class="font-weight-bold">-30%</small></span>
+                <% }%>
+                <hr class="">
+                <div class="">
+                    <span class="mr-2 font-weight-bold">Qauntity</span>
+                    <span id="addq" class="fa fa-minus p-1 m-0 border"></span>
+                    <input type="number" min="1"  id="q" value="1" class="col-1 p-1 border m-0" />
+                    <span id="minusq" class="fa fa-plus p-1 m-0 border"></span>
+                </div>
+
+                <hr>
+                <button id="<%=Prd.product_id%>" class="btn col-12 col-md-6 btn-success font-weight-bold text-white add">ADD TO CART <span
+                        class="fa fa-shopping-cart"></span></button>
+                
+                <hr>
+                <span>Free Delivery</span> <span class="alert-warning font-weigh-bold p-2 rounded-lg">Sokoto</span>
+                <p class="mt-2">Share To </p>
+                <span class="fa fa-facebook"></span>
+                <span class="fa fa-twitter"></span>
+                <span class="fa fa-whatsapp"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container rounded-top p-3 mt-2 bg-white">
+        <h5 class="p-2 font-weight-bold">Product Details</h5>
+        <hr>
+        <%=Prd.product_details %>
+    </div>
+
+    <div class="container rounded-top p-3 mt-2 bg-white">
+        <h5 class="p-2 font-weight-bold">Product specfication</h5>
+        <hr>
+        <table class="table  col-md-6 col-12 border  table-hover">
+            <% Data.product.spec.forEach(function(spec){%>
+            <tr>
+                <td class="font-weight-bold"><%= spec.name %></td>
+                <td><%= spec.value %></td>
+            </tr>
+
+            <%});%>
+        </table>
+    </div>
+  
+   
+   
+
+</body>
+
+</html>
+<script>
+    $('.showcase').bind("click",function(){
+        let img=$(this).attr("src");
+       $("#prodimg").attr("src",img);
+    })
+</script>
+<script src="http://localhost:3000/cart.js"></script>
+<script src="http://localhost:3000/jquery.js"></script>

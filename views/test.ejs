@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    input{
+        width: 100%;
+    }
+    #rleft{
+       
+    }
+    #range {
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        background: green;
+        padding: 0px;
+        
+    }
+
+    #left,
+    #right {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: green;
+        display: block;
+        top: -6px;
+       
+    }
+    #left{
+        position: absolute;
+        left:0%;
+        transform: translate(-8px);
+      
+    }
+    #right{
+    position: absolute;
+       right:0%;
+       transform: translate(8px);
+       
+    }
+    .multi{
+        
+        width: 650px;
+        height: 40px;
+        position: relative;
+       
+        background-color:red;
+       
+    }
+
+    .container-product{
+        width: 100%;
+        height: 340px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+       
+    }
+    
+    .cont::-webkit-scrollbar{
+       
+    }
+</style>
+
+<body>
+<div class="col-6 ml-2">
+    <input id="rleft" class=" p-0 mx-auto" type="range" value="25" min="0" max="100" name="" id="">
+    <input id="rright" class=" p-0 mx-auto" type="range" value="75" min="0" max="100" name="" id="">
+   <div class="multi">
+    <div id="range" class="p-0 m-0">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+    
+   </div>
+       
+    
+</div>
+
+    
+
+<div>
+</div>
+<div class="cont bg-light p-4 mb-4">
+    <div class="row" style="flex-wrap: nowrap;">
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">1hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">2hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">3hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">4hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">6hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">7hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">4hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">6hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+        <div class="col-md-3 mx-auto col-5 col-sm-4  col-lg-2 p-2 prd">
+            <img src="http://localhost:3000/iphone.jpg" width="150px" height="auto" alt="">
+            <span class="dis  rounded-right bg-danger"><small>-30%</small></span>
+            <p class="prdd mb-0">7hhd dd ddkjd dkd lks skjs sklsns slks sls slks sls sls sl s ssls llsl</p>
+            <p class="prdp mb-0">&#8358;1,000</p>
+            <p class="prddis"><del>&#8358; 2,000</del></p>
+        </div>
+
+    </div>
+</div>
+  </div>
+   
+
+</div>
+    
+</body>
+
+</html>
+<script>
+
+
+</script>
+<script src="http://localhost:3000/test.js"></script>

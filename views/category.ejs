@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://localhost:3000/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/category.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/product.css">
+    <!-- jQuery library -->
+    <script src="http://localhost:3000/jquery.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="blur mt-0 "><span class="float-right mt-2 mr-2  cancel">cancel</span></div>
+<div class="container-fluid py-5">
+	
+
+    <div class="row justify-content-center">
+    
+    <div class="my  col-3 d-none col-md-3 align-self-start d-lg-block">
+    <div class="bg-light p-3 shadow rounded-lg">
+        <div class="category">
+            <p class="hd"><%=category.slug%></p>
+            
+            
+        </div>
+        <hr>
+        <form action="" id="sort" class="" onsubmit="return validate()">
+        <div>
+            <label  class='mt-2 d-block hd'>Brand
+             <select id="brand" name="brand" class="form-control">
+                <option value="Apple">Apple</option>
+             </select> 
+            <label>
+        </div>
+            <hr>
+        <div>
+        <label class='mt-2 ml-2 d-block mx-auto hd '>Price(&#8358;) <small>min-max</small> 
+
+        <label>
+        <input id="min" class="col-5 inputrg p-1" value="0" min="0"  type="number" name="min" id="">
+            -
+        <input id="max" class="col-5 inputrg p-1" value="150000" min="1" max="1500000" type="number" name="max" id="">
+        </div>
+        
+        <hr class="">
+        
+        <input type="submit" value="filter">
+        
+    </form>
+    </div>
+    </div>
+
+	<div class="main bg-light p-3 col-md-12 col-lg-9 rounded-lg">
+        <span class="mb-3 hd"><%=category.slug%>(<%=size%>)</span>
+        <div class="d-inline-block float-right">
+            
+            <select  class="form-control btn btn-sm btn-outline-success " name="" id="datemode">
+                
+                <option value="new">NEW</option>
+                <option value="old">OLD</option>
+            </select>
+        </div>
+
+        <button class="mr-2 filter btn btn-sm btn-warning d-md-none d-inline-block float-right"> 
+            Filter
+        </button>
+            
+      
+       <div class="row mt-4">
+        <% Data.forEach(function(product)
+		{
+			%>
+            <div class="col-lg-3 col-md-3  col-6 col-sm-4 p-2 prd ">
+                <a href="http://localhost:3000/<%= 'product/'+product.product_name.replace(/ /g,'-')+'/'+product.product_id%>"
+                    class="text-decoration-none text-dark">
+                <img src="http://localhost:3000/<%= product.product_img %>" width="100%" height="auto" alt="">
+                <% if(product.dis_price) {%>
+                    <span class="dis  rounded-right bg-danger"><small><%= product.dis_per %></small></span>
+                    <% }%>
+                    <p title="<%=product.product_name %>" class="prdd mb-0"><%= product.product_name%></p>
+                    <p class="prdp mb-0">&#8358;<%= product.product_price.toLocaleString();%></p>
+                    <% if(product.dis_price) {%>
+                    <p class="prddis"><del> <%- "&#8358;"+ product.disc_price.toLocaleString();%></del></p>
+
+                    <% }%>
+                    </a>
+                <button id="<%= product.product_id%>" class="btn-cat btn btn-md col-12 m-0 btn-success font-weight-bold text-white add">ADD TO CART <span class="fa fa-shopping-cart"></span></button>
+            </div>
+
+            <% 
+		}
+		);
+			 %>
+            
+        </div>
+        <div class="mt-2">
+            <%
+            var pages=Math.ceil(size/2);
+            page=Number.parseInt(page)+1;
+            for(var i=1;i <= pages;i++){
+               
+               
+           if(page==i){ %>
+            <a href="javascript:void(0)" class="d-inline-block  text-dark text-decoration-none active"><%= i %></a>
+           <% }
+           else{ %>
+            <a href="<%=  qs+'p='+(i-1) %>" class="d-inline-block text-dark text-decoration-none page"><%= i   %></a>
+            <% }
+           
+            }%>
+        </div>
+           
+    </div>
+   
+</div>
+</div>
+<footer>
+
+
+</footer>
+</body>
+</html>
+<script>
+var option=document.getElementById("datemode");
+var brand=document.getElementById("brand");
+var min=document.getElementById("min");
+var max=document.getElementById("max");
+// var sort=document.getElementById("sort");
+var rating=document.getElementsByName("rating");
+
+function validate(e){
+    e.preventdefault();
+    if(max<min) {
+        alert("Dd")
+    }
+    else{return true;}
+    alert("el");
+}
+//  $(".page").on("click",function(){
+//      pageurl=window.location;
+//      pagenum=$(this).text();
+//      num=Number.parseInt(pagenum)-1;
+
+//      window.location=pageurl+"&p=";
+//  })
+    
+$(".filter").on("click",function(){
+   
+    $(".my").removeClass(" col-3  col-md-3 d-lg-block").addClass(" d-block side");
+    $(".blur").addClass("d-block");
+
+})
+
+$(".cancel").on("click",function(){
+    $(".blur").removeClass("d-block");
+    $(".my").addClass(" col-3 d-none col-md-3 d-lg-block").removeClass("d-block side ");
+})
+
+</script>
+<script src="http://localhost:3000/test.js"></script>

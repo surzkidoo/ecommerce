@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="cart.css">
+    <link rel="stylesheet" type="text/css" href="product.css">
+    <!-- jQuery library -->
+    <script src="http://localhost:3000/jquery.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    
+    
+    <div class="container">
+
+    <div class="row">
+
+    
+    <div class="col-12 col-md-8">
+    <% Data.data.forEach(function(cart){%>
+    <div class="row bg-white border mb-1 p-2 ">
+        <div class="col-3 col-md-2 mb-2">
+            <img src="http://localhost:3000/<%= cart.product_img %>" class="d-inline-block" width="50px" height="" alt="">
+                            <div class="d-inline  tag ml-3">
+                               
+                            </div>
+        </div>
+        <div class="col-8 col-md-3">
+            <%= cart.product_name %>
+        </div>
+
+        <div class="col-4 col-md-2">
+            <div class="mt-2">
+                <span id="minus" class="fa minus fa-minus p-1 m-0 border"></span>
+                <span  class=" p-1 border m-0"><input id="<%=cart.product_id %>" value="<%=cart.q %>" class="int-cart" type="text"
+                        src="" alt=""></span>
+                <span id="add" class="fa fa-plus add p-1 m-0 border"></span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <p class="font-weight-bold price m-0">&#8358;<%=(cart.product_price*cart.q).toLocaleString();%></p>
+            <span  class="text-secondary m-0">
+                <%= cart.product_price.toLocaleString() +" x "+ cart.q %>
+            </span>
+        </div>
+        <div class="col-2 col-md-2">
+            <p  id="<%=cart.product_id %>" class="delete">D</p>
+        </div>
+    </div>
+    <% }) %>
+</div>
+
+</div>
+</div>
+</body>
+</html>
+<script >
+   function reload(){
+        window.location=window.location.pathname;
+    }
+    function getcokies(){
+        newraw= document.cookie.split(";");
+        for (let index = 0; index < newraw.length; index++) {
+            if(newraw[index].charAt(0)==="c"){
+                return newraw[index].split("=")[1];
+            }
+        }
+        return "[]";
+    }
+//update qautity in cart
+cart_update=document.getElementsByClassName("int-cart");
+minus=document.getElementsByClassName("minus");
+add=document.getElementsByClassName("add");
+del=document.getElementsByClassName("delete");
+
+for(var i=0;i<minus.length;++i){
+        minus[i].addEventListener("click",function(){
+          update(this.nextElementSibling.firstElementChild.id,parseInt(this.nextElementSibling.firstElementChild.value)-1);
+        });
+}
+    for(var i=0;i<add.length;++i){
+        add[i].addEventListener("click",function(){
+           var current= parseInt(this.previousElementSibling.firstElementChild.value);
+           this.previousElementSibling.firstElementChild.value=current+1;
+          update(this.previousElementSibling.firstElementChild.id,parseInt(this.previousElementSibling.firstElementChild.value));
+        });
+}
+    for(var i=0;i<del.length;++i){
+        del[i].addEventListener("click",function(){
+         remove(this.id);
+        });
+}
+
+function update(id,value){
+    var cookie= JSON.parse(getcokies());
+    for (let index = 0; index < cookie.length; index++) {
+        if(cookie[index].id==id){
+            cookie[index].q=value;
+            document.cookie="cart="+JSON.stringify(cookie)+"; path=/;";
+            loader()
+            reload()
+            return true;
+        }
+    }
+    return false
+}
+for(var i=0;i<cart_update.length;++i){
+    cart_update[i].addEventListener("input",function(){
+      
+        update(this.id,this.value);
+    });
+}
+
+function loader(){
+        $(".blur").addClass("d-flex")
+        var timer=setInterval(function(){
+            $(".blur").removeClass("d-flex");
+            clearInterval(timer);
+        },2000)
+    }
+
+function remove(id){
+        if(exist(id)!=-1){
+          let cookie = JSON.parse(getcokies());
+          cookie.splice(exist(id),1);
+         
+          document.cookie="cart="+JSON.stringify(cookie)+"; path=/;";
+          loader();
+          reload();
+          $("tr[id="+id+"]").remove();
+        }
+        else{
+            alert("doesn't exist");
+        }
+    }
+
+    function exist(id){
+        let raw = JSON.parse(getcokies());
+        if(raw.length==0){
+            return -2;
+        }
+        for (let index = 0; index < raw.length; index++) {
+            if(raw[index].id==id){
+                return index;
+            }
+          
+        }
+        return -1;
+    }
+
+</script>

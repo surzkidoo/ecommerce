@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://localhost:3000/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/category.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/product.css">
+    <!-- jQuery library -->
+    <script src="http://localhost:3000/jquery.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    
+<div class="container bg-white p-4 ">
+	
+       <div class="row  mt-4">
+        <% Data.forEach(function(product)
+		{
+			%>
+            <div class="col-6 col-md-3 col-lg-2 p-2 prd  ">
+                <a href="http://localhost:3000/<%= 'product/'+product.product_name.replace(/ /g,'-')+'/'+product.product_id%>"
+                    class="text-decoration-none text-dark">
+                <img src="http://localhost:3000/<%= product.product_img %>" width="100%" height="auto" alt="">
+                <% if(product.dis_price) {%>
+                    <span class="dis  rounded-right bg-danger"><small><%= product.dis_per %></small></span>
+                    <% }%>
+                    <p title="<%=product.product_name %>" class="prdd mb-0"><%= product.product_name%></p>
+                    <p class="prdp mb-0">&#8358;<%= product.product_price.toLocaleString();%></p>
+                    <% if(product.dis_price) {%>
+                    <p class="prddis"><del> <%- "&#8358;"+ product.disc_price.toLocaleString();%></del></p>
+
+                    <% }%>
+                    </a>
+                <button id="<%= product.product_id%>" class="btn-cat btn btn-md col-12 m-0 btn-success font-weight-bold text-white add">ADD TO CART <span class="fa fa-shopping-cart"></span></button>
+            </div>
+
+            <% 
+		}
+		);
+			 %>
+       </div>
+       <div class="mt-2">
+        <%
+        var pages=Math.ceil(size/4);
+        page=Number.parseInt(page)+1;
+        for(var i=1;i <= pages;i++){
+           
+           
+       if(page==i){ %>
+        <a href="javascript:void(0)" class="d-inline-block  text-dark text-decoration-none active"><%= i %></a>
+       <% }
+       else{ %>
+        <a href="<%=  qs+'p='+(i-1) %>" class="d-inline-block text-dark text-decoration-none page"><%= i   %></a>
+        <% }
+       
+        }%>
+    </div>
+       
+</div>
+<footer>
+
+
+</footer>
+</body>
+</html>
+<script>
+
+
+</script>
+<script src="http://localhost:3000/test.js"></script>

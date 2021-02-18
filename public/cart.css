@@ -1,0 +1,43 @@
+
+.int-cart{
+    width: 25px;
+    height: 23px;
+    font-size: 15px;
+    text-align: center;
+}
+.empty{
+    display: flex;
+    align-items: center;
+    height: 300px;
+    justify-content: center;
+    font-size: 30;
+    background-color: white;
+}
+.spinner{
+	border:5px  solid white;
+	border-top:5px  solid rgb(25, 221, 25);
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+.blur{
+	top:0px;
+	background-color: rgba(0, 0,0,0.5);
+	height:100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+
+}
+@keyframes spin{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}

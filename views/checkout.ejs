@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>No 1 shopping site in nigeria</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="checkout.css">
+    <link rel="stylesheet" type="text/css" href="category.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+
+    <div class="container rounded-top p-3 mt-2">
+        <div class="row">
+
+            <div class="col-md-7 col-12 rounded bg-white p-4 mb-2 mr-md-4">
+
+                <h5 class="p-2 font-weight-bold">Billing details</h5>
+                <hr>
+                <form action="/checkout" method="post">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="fname" class=" d-inline-block  ml-0">First name <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="text" class=" m-0 p-0" name="fname" id="fname">
+                        </div>
+                        <div class="col-6">
+                            <label for="lname" class=" d-inline-block  ml-0">Last name <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="text" class=" m-0 p-0" name="lname" id="fname">
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <label for="email" class=" d-inline-block  ml-0">Email <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="email" class=" m-0 p-0" name="email" id="fname">
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <label for="fname"  class=" d-inline-block  ml-0">Phone Number <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="tel" class=" m-0 p-0" name="phone" id="fname">
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <label for="fname" class=" d-inline-block  ml-0">Address <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="text" class=" m-0 p-0" name="address" id="fname">
+                        </div>
+                        <div class="col-12 mt-3">
+                            
+                            <input type="submit" class="btn btn-success m-0 p-0"  value="Order Now" name="send" id="fname">
+                        </div>
+                    </div>
+                   
+                </form>
+            </div>
+            <div class="col-md-4 col-12 col-sm-3 p-4 ml-md-5 bg-white rounded align-self-start">
+                <h5 class="font-weight-bold">Order details</h5>
+               <div class="border p-2 mb-2">
+                   Total = N343,334
+               </div>
+               <h5 class="font-weight-bold" >Payment</h5>
+               <div class="border p-2 mb-2">
+                <p>We have only one payment option, which is <b>Pay on Delivery</b>.
+                this payment option allow to pay on arrival of the purchase product(s).
+                we choose this because we want transaction to be smooth and to build trust with our customers.
+            </p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

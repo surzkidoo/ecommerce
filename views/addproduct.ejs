@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>No 1 shopping site in nigeria</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://localhost:3000/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="checkout.css">
+    <link rel="stylesheet" type="text/css" href="category.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+
+    <div class="container rounded-top p-3 mt-2">
+        <div class="row">
+
+            <div class="col-md-7 col-12 bg-white p-4 mb-2 mr-md-4">
+
+                <form action="/checkout" method="post">
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <label for="fname" class=" d-inline-block  ml-0">name <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="text" class="form-control m-0 p-0" name="name" id="fname">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="lname" class=" d-inline-block  ml-0">description <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="text" class="form-control m-0 p-0" name="description" id="fname">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="email" class=" d-inline-block  ml-0">price <sup class="text-danger">*</sup>
+                            </label>
+                            <input type="text" class="form-control m-0 p-0" name="price" id="fname">
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <label for="fname"  class=" d-inline-block  ml-0">discount<sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="text" class="form-control m-0 p-0" name="dis" id="fname">
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <label for="fname" class=" d-inline-block  ml-0">spec <sup class="text-danger">*</sup>
+                        
+                            </label>
+                            <input type="text" class="form-control m-0 p-0" name="spec" id="fname">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <input type="submit" class="btn btn-success m-0 p-0"  value="Order Now" name="send" id="fname">
+                        </div>
+                    </div>
+                   
+                </form>
+            </div>
+            
+        </div>
+</body>
+
+</html>

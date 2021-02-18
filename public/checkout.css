@@ -1,0 +1,10 @@
+input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid green;
+}
+label{
+    font-weight: bold;
+}
